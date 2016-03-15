@@ -41,6 +41,7 @@ pipe = sp.Popen(command, stdin=sp.PIPE, stderr=sp.PIPE)
 # newfp = np.fromfile("/dev/mem", dtype='uint8', count=x*y*3, sep='')
 # im = np.reshape(np.copy(newfp),(x,y,3))
 	#for t in range(100):
+
 print('opening udp://localhost:1234')
 while (True):
 	#print (t)
