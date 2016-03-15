@@ -47,7 +47,7 @@ while (True):
 	#print (t)
 	newfp = np.fromfile("/dev/mem", dtype='uint8', count=x*y*z, sep='')
 	im = np.reshape(np.copy(newfp),(y,x,z))
-    pipe.proc.stdin.write( image_array.tostring() )
+    pipe.proc.stdin.write(im.tostring())
 	#im_out = Image.fromarray(np.uint8(im))
 	#im_out.save(p.stdin,'PNG')
 	time.sleep(1/float(fps)) #pause to prevent rapid succession
