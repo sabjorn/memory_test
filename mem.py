@@ -12,12 +12,8 @@ z=4
 fps = 30.
 
 p = Popen(['ffmpeg', '-y', '-f', 'image2pipe', '-framerate', str(fps), \
-'-re', '-i', '-', '-tune', 'zerolatency','-b', '900k', '-c:v', 'libx264','-f', 'mpegts', '-r', str(fps), 'udp://localhost:1234'], stdin=PIPE) #stream output
+'-re', '-i', '-', '-tune', 'zerolatency','-b', '900k', '-c:v', 'libx264','-f', 'mpegts', '-r', str(fps), 'udp://localhost:1234'], stdin=PIPE, bufsize=size*4) #stream output
 #p = Popen(['ffmpeg', '-y', '-f', 'image2pipe', '-framerate', '30', '-i', '-', '-pix_fmt', 'yuv420p', '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-r', '30', 'memory.mov'], stdin=PIPE) #for saving to file
-
-# newfp = np.fromfile("/dev/mem", dtype='uint8', count=x*y*3, sep='')
-# im = np.reshape(np.copy(newfp),(x,y,3))
-	#for t in range(100):
 
 print('opening udp://localhost:1234')
 while (True):
