@@ -3,6 +3,8 @@
 from PIL import Image
 import time
 from subprocess import Popen, PIPE #pipe data
+import numpy as np
+
 
 #16:9 aspect ratio
 x = 1600/16
